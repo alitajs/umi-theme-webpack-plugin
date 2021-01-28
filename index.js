@@ -4,12 +4,13 @@ const path = require("path");
 class UmiThemePlugin {
   constructor(options) {
     const defaulOptions = {
-      varFile: path.join(__dirname, "../../src/styles/variables.less"),
-      antDir: path.join(__dirname, "../../node_modules/antd"),
-      stylesDir: path.join(__dirname, "../../src/styles/antd"),
+      varFile: path.join(__dirname, "../../node_modules/antd-mobile/lib/style/themes/default.less"),
+      antDir: path.join(__dirname, "../../node_modules/antd-mobile"),
+      stylesDir: path.join(__dirname, "../../src/"),
       themeVariables: ["@brand-primary"],
       generateOnce: false,
-      outputFileName: 'color.less'
+      outputFileName: 'color.less',
+      type: 'antd-mobile'
     };
     this.options = Object.assign(defaulOptions, options);
     this.generated = false;
